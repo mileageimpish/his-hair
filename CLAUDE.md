@@ -7,6 +7,7 @@ Rebuild of https://www.hishairclinic.hk/ (currently WordPress) as a fast, SEO- a
 - **Tasks, brief, decisions:** Linear, team HIS, project "HIS Website Rebuild". Read the linked issue before starting work and update it when done. Do not copy Linear docs into this repo; link to them.
 - **Rules for working in this repo:** this file.
 - **Content model and SEO conventions:** `/docs`.
+- **SEO standard:** Linear document 'SEO strategy'. Link to it, don't copy it.
 - **Legacy reference:** `/legacy` holds text exports and references from the old WordPress site (WXR export, theme files, URL list, SEO data, screenshots). It is read-only reference material; never edit it. The media library and any database dump are NOT in git (they are large, and a dump may contain personal data). They are stored at: TO BE FILLED IN.
 
 ## Stack
@@ -29,6 +30,7 @@ Rebuild of https://www.hishairclinic.hk/ (currently WordPress) as a fast, SEO- a
 - Never mix languages on a page. UI strings come from per-locale files.
 - Never machine-translate content into published fields.
 - Every page sets `<html lang>`, a canonical URL, and hreflang links (including `x-default`) to its counterparts.
+- hreflang codes are zh-Hant-HK, en-HK and x-default (zh-HK).
 
 ## Content model rules (built for ChatGPT editing)
 
@@ -44,7 +46,7 @@ Rebuild of https://www.hishairclinic.hk/ (currently WordPress) as a fast, SEO- a
 - Title, meta description and OG image come from the CMS. The canonical tag and hreflang links are present.
 - JSON-LD: `MedicalClinic` / `LocalBusiness` site-wide, plus the page-type schema (`Service`, `FAQPage`, `Article`, `BreadcrumbList`) as relevant.
 - One `h1`, semantic HTML, and alt text on every image.
-- Included in the sitemap and reflected in `llms.txt`.
+- Included in the sitemap. llms.txt is optional and not required (see the SEO strategy doc in Linear).
 - Its legacy URL returns 200 or a 301. Redirects are stored as Sanity `redirect` documents and generated into `_redirects`.
 - Mobile Lighthouse scores are 95 or above for Performance, SEO and Accessibility.
 - In v1, it is visually checked against the legacy screenshot.
