@@ -1,0 +1,353 @@
+[
+ {
+  "id": 6,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/architecture/",
+  "name": "Architecture",
+  "slug": "architecture",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/6"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=6"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 7,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/art/",
+  "name": "Art",
+  "slug": "art",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/7"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=7"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 8,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/building/",
+  "name": "Building",
+  "slug": "building",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/8"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=8"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 9,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/exterior/",
+  "name": "Exterior",
+  "slug": "exterior",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/9"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=9"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 10,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/furniture/",
+  "name": "Furniture",
+  "slug": "furniture",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/10"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=10"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 11,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/house/",
+  "name": "House",
+  "slug": "house",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/11"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=11"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 12,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/interior/",
+  "name": "Interior",
+  "slug": "interior",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/12"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=12"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 13,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/livingroom/",
+  "name": "Livingroom",
+  "slug": "livingroom",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/13"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=13"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 14,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/tag/trends/",
+  "name": "Trends",
+  "slug": "trends",
+  "taxonomy": "post_tag",
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags/14"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/post_tag"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?tags=14"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]

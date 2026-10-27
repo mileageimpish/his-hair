@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Ma1-1024x687.png",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Ma1-1024x687.png",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e4%b8%ad%e5%9c%8b%e4%ba%ba%e9%ab%ae%e8%b3%aa%e8%88%87%e8%84%ab%e9%ab%ae/#webpage",
+      "url": "https://www.hishairclinic.hk/%e4%b8%ad%e5%9c%8b%e4%ba%ba%e9%ab%ae%e8%b3%aa%e8%88%87%e8%84%ab%e9%ab%ae/",
+      "name": "中國人髮質與脫髮 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-08T22:36:14+08:00",
+      "dateModified": "2026-10-23T14:29:58+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Ma1-1024x687.png"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "中國人髮質與脫髮 - HIS 香港紋髮 SMP 中心",
+      "keywords": "脫髮,髮質,中國人,華裔",
+      "datePublished": "2022-11-08T22:36:14+08:00",
+      "dateModified": "2026-10-23T14:29:58+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "中國人髮質與脫髮：頭髮生長的情況與速度除了關乎個人差異外，也與種族相關，因為不同民族人士的髮質都有所不同。頭髮很多時都是國籍的象徵，例如瑞典人以金色幼髮見稱，非洲人的髮質特徵是短而粗，而中國人的頭髮一般較長和強靭。當然，不是每一位同族人都擁有相同髮質，以上說法只屬概括論述。中國人是一個已存在數千年的民族，擁有自己的中藥療法、獨特的傳說和文化。中國人的頭髮以強靭、柔滑、順直為特質，很容易便能被辨認出。與其他民族的髮質相比，中國人頭髮的毛囊較粗大，髮絲即使在潮濕和大雨下仍能保持順直。中國人的髮絲較少迅速掉落，因為頭髮生長週期可長達9年；然而這並不代表中國人不會面對脫髮的問題。中國黃洛瑤寨的小數民族紅瑤寨婦女，便是以族人的長髮聞名。她們一輩子只會在16歲那年剪一次髮，頭髮可長至5-6米，族人所居住的地方因而稱為長髮寨，她們相信頭髮是神聖的，會帶來好運、長壽和財富。儘管髮質會因為民族而有所不同，但我們護理頭髮時卻應同樣小心謹慎。健康的頭髮需要均衡飲食來支持，當中應包括各種維他命和礦物質。當身體出現任何形式壓力，不論是源自疾病或受驚，最終都會影響頭髮狀況。當身體需要應付疾病時，它會確保養份先到達主要必須器官，而即使皮膚是人體面積最大的器官，卻不是當中最主要的，因此往往只能得到較少養份，結果毛囊便無法得到足夠的營養，髮絲自然有欠美觀。發現掉髮而無任何明顯原因時，應及早前往髮理中心或向醫護人員求",
+      "name": "中國人髮質與脫髮 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e4%b8%ad%e5%9c%8b%e4%ba%ba%e9%ab%ae%e8%b3%aa%e8%88%87%e8%84%ab%e9%ab%ae/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e4%b8%ad%e5%9c%8b%e4%ba%ba%e9%ab%ae%e8%b3%aa%e8%88%87%e8%84%ab%e9%ab%ae/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Ma1-1024x687.png"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e4%b8%ad%e5%9c%8b%e4%ba%ba%e9%ab%ae%e8%b3%aa%e8%88%87%e8%84%ab%e9%ab%ae/#webpage"
+      }
+    }
+  ]
+}

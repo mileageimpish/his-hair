@@ -1,0 +1,9 @@
+<!-- https://www.hishairclinic.hk/404-test-does-not-exist/ -->
+
+# 404
+
+## Sorry! Page Not Found!
+
+你好！ 您要搜尋的頁面經以更新。 請返回網站主頁。
+
+[TAKE ME HOME](https://www.hishairclinic.hk/)

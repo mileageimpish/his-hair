@@ -48,3 +48,10 @@ studio/.sanity/
 *.swp
 *.swo
 *~
+
+# Crawl cache (re-creatable; large)
+legacy/cache/
+
+# Large crawl artefacts: stored outside git (see legacy/CRAWL-README.md)
+legacy/html/
+legacy/screenshots/

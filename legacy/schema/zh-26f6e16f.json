@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20210421-589x1024.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20210421-589x1024.jpg",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e5%82%b3%e5%aa%92%e5%a0%b1%e5%b0%8e/#webpage",
+      "url": "https://www.hishairclinic.hk/%e5%82%b3%e5%aa%92%e5%a0%b1%e5%b0%8e/",
+      "name": "傳媒報導 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-08T23:51:41+08:00",
+      "dateModified": "2026-10-22T16:31:53+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20210421-589x1024.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "傳媒報導 - HIS 香港紋髮 SMP 中心",
+      "keywords": "紋髮",
+      "datePublished": "2022-11-08T23:51:41+08:00",
+      "dateModified": "2026-10-22T16:31:53+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "香港都市人生活高壓、飲食不定，據臨床調查顯示，全港有近三成成年男士及兩成女士面對不同程度的頭部脫髮困擾。面對「頭部脫髮治療」，坊間由口服生髮藥物、外用噴劑到侵入性植髮手術應有盡有，但不少患者因選擇不當而走入誤區。究竟現代脫髮治療有何優缺點？傳媒特別專訪本港權威紋髮機構 HIS Hair Clinic HK，為大家深度拆解各種治療方案的真面目。",
+      "name": "傳媒報導 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e5%82%b3%e5%aa%92%e5%a0%b1%e5%b0%8e/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e5%82%b3%e5%aa%92%e5%a0%b1%e5%b0%8e/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20210421-589x1024.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e5%82%b3%e5%aa%92%e5%a0%b1%e5%b0%8e/#webpage"
+      }
+    }
+  ]
+}

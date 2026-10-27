@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.hishairclinic.hk/tag/livingroom/#webpage",
+      "url": "https://www.hishairclinic.hk/tag/livingroom/",
+      "name": "Livingroom - HIS 香港紋髮 SMP 中心",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "inLanguage": "zh-TW"
+    }
+  ]
+}

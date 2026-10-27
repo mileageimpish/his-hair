@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/logo1200x630.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/logo1200x630.jpg",
+      "width": "1200",
+      "height": "630",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e9%a1%a7%e5%ae%a2%e9%ab%94%e9%a9%97/#webpage",
+      "url": "https://www.hishairclinic.hk/%e9%a1%a7%e5%ae%a2%e9%ab%94%e9%a9%97/",
+      "name": "顧客體驗 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-17T00:04:46+08:00",
+      "dateModified": "2026-08-17T00:33:50+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/logo1200x630.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "顧客體驗 - HIS 香港紋髮 SMP 中心",
+      "keywords": "紋髮",
+      "datePublished": "2022-11-17T00:04:46+08:00",
+      "dateModified": "2026-08-17T00:33:50+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "本人完成smp紋髮著色治療將近六年，亦在此衷心感謝紋髮師jonathan的精湛手藝，令本人重拾笑容及改變了所有脫髮人士多年困擾的問題！本人現年將近50歲，記得記得20歲開始脫髮 ，看過醫生亦都肯定是男性雄性禿髮現象。為了解決脫髮的煩惱，期間浪費了大量的金錢購買生髮用品 ，包括洗頭水、生髮素、精華素等等; 搽的吃的、中的西的，亦曾經試過 ，結果全部失敗，沒有成效，除了浪費金錢外，最苦的都是沮喪而回。後來，亦曾經嘗試過進行一些以套票形式的中藥焗頭生髮療程， 每星期做一次中藥療程，最後亦是沒有結果，金錢固然用去了， 時間亦都浪費了不少。最終本人去了做植髮手術，附上了接近20多萬，植了2500條在前額部分， 數年後植髮的部分，亦隨著時間又已慢慢的脫落 ，外貌依舊，視覺上都是一位脫髮人士。最後，偶爾間在網上看到有關jonathan紋髮師的報道的報道;終是把心一橫，決定再試一試！結果喜出望外， SMP紋髮效果自然，在這幾年裏本人亦都不用再擔心自己有脫髮的問題，因為視覺上外人已看不出我有脫髮的問題，因為他人只覺得本人只是skin hair髮型，不是有脫髮的問問題。最重要現在的生活非常精彩，家人覺得你健康了 ，自己亦不用掩掩飾的個日子，重心信心，重拾笑容 ，掌握會所有時間， 更可投入自己喜愛的水上及戶外活動 。現在戴帽只是為了防曬，不是在為了掩飾了！亦希望各位脫髮人士能夠嘗試這種紋髮療程，最重要找一個有經驗的紋髮師！",
+      "name": "顧客體驗 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e9%a1%a7%e5%ae%a2%e9%ab%94%e9%a9%97/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e9%a1%a7%e5%ae%a2%e9%ab%94%e9%a9%97/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/logo1200x630.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e9%a1%a7%e5%ae%a2%e9%ab%94%e9%a9%97/#webpage"
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+ "category": {
+  "name": "分類",
+  "slug": "category",
+  "description": "",
+  "types": [
+   "post"
+  ],
+  "hierarchical": true,
+  "rest_base": "categories",
+  "rest_namespace": "wp/v2",
+  "_links": {
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies"
+    }
+   ],
+   "wp:items": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/categories"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ "post_tag": {
+  "name": "標籤",
+  "slug": "post_tag",
+  "description": "",
+  "types": [
+   "post"
+  ],
+  "hierarchical": false,
+  "rest_base": "tags",
+  "rest_namespace": "wp/v2",
+  "_links": {
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies"
+    }
+   ],
+   "wp:items": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/tags"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ "nav_menu": {
+  "name": "導覽選單",
+  "slug": "nav_menu",
+  "description": "",
+  "types": [
+   "nav_menu_item"
+  ],
+  "hierarchical": false,
+  "rest_base": "menus",
+  "rest_namespace": "wp/v2",
+  "_links": {
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies"
+    }
+   ],
+   "wp:items": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/menus"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+}
