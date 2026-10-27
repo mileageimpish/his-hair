@@ -55,3 +55,6 @@ legacy/cache/
 # Large crawl artefacts: stored outside git (see legacy/CRAWL-README.md)
 legacy/html/
 legacy/screenshots/
+legacy/assets/css/
+legacy/assets/fonts/
+legacy/assets/images/
