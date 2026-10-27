@@ -10,3 +10,4 @@ Large artefacts from the 2026-10-26 crawl of hishairclinic.hk (see `legacy/CRAWL
 | `uploads.tar` | `legacy/` (`tar -xf`) | Media library originals, 566 files (the API hides 48 more). Paths mirror `wp-content/uploads/`. |
 
 Fetch: `git lfs pull` after checking out this branch (or `git clone --branch legacy-assets`).
+| `assets-css-fonts.tar.gz` | `legacy/` (`tar -xzf`) | The site's real public stylesheets (80 CSS: theme, Elementor generated, plugins), fonts (Google Fonts TTFs, Font Awesome, Flaticon, eicons) and 27 theme images, as served on 2026-10-27. Theratio is a purchased theme: reference only, check its licence before reusing files. Manifest + design tokens are on the main branch (`legacy/assets/manifest.csv`, `design-tokens.json`). |
