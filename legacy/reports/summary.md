@@ -10,7 +10,7 @@ Crawled **2026-10-26** from https://www.hishairclinic.hk (WordPress). Read-only:
 | HTML pages snapshotted (200, rendered + source + text + 2 screenshots each) | 165 |
 | Pages (WP `page`) | 21 (20 in sitemap + `/404-2/`) |
 | Posts (all at `/YYYY/MM/DD/slug/`) | 72 |
-| Portfolio items (CPT `ot_portfolio`, `/portfolio/slug/`) | 28 |
+| Portfolio items (CPT `ot_portfolio`, `/portfolio/slug/`) | 27 (+ the `/portfolio/` archive page; the sitemap lists 28 URLs) |
 | Taxonomy archives | categories 2 (`news`, `uncategorized`), portfolio category 1, tags 9 (theme-demo leftovers) |
 | Pagination URLs (`/…/page/N/`) | 34 |
 | Media library | 614 reported / 566 returned by API; 105.6 MB originals (downloaded, git-ignored); 2,291 referenced upload URLs, **all 200** |
@@ -29,7 +29,7 @@ SMP 治療: /男士專用脫髮療程/ /什麼是smp？/ /植髮與疤痕/ /脫�
 /顧客體驗/ (testimonials)   /聯絡我們/ (CF7 + Google Map)
 /斑禿治療/ — in the sitemap but **linked from nowhere** (the only orphan; depth ∅)
 /資訊/ (blog index, 8 pages) → 72 posts  /YYYY/MM/DD/slug/   (category /category/news/)
-/portfolio/ (4 pages) → 28 items /portfolio/slug/   /portfolio-category/見證專訪/ (5 pages)
+/portfolio/ (4 pages) → 27 items /portfolio/slug/   /portfolio-category/見證專訪/ (5 pages)
 leftovers: /404-2/, /tag/* (9), /category/uncategorized/, /author/admin2122his/ (8 pages)
 ```
 

@@ -9,7 +9,7 @@ v1 rule (CLAUDE.md): same URLs, no structure changes without a Linear decision. 
 |---|---:|---|---|
 | Pages (`/slug/`) | 21 (20 in sitemap + `/404-2/`) | 200 | yes, except `/404-2/` (decision) |
 | Posts, date-based (`/YYYY/MM/DD/slug/`) | 72 | 200 | yes, exact |
-| Portfolio items (`/portfolio/slug/`, CPT `ot_portfolio`) | 28 | 200 | yes, exact |
+| Portfolio items (`/portfolio/slug/`, CPT `ot_portfolio`) | 27 | 200 | yes, exact |
 | Archives: `/portfolio/`, `/portfolio-category/見證專訪/`, `/category/news/`, `/author/admin2122his/` (+ `/page/N/` variants: 34) | 4 + 34 | 200 | decision (see 4, 5) |
 | Tag archives (`/tag/<x>/`, 9) and `/category/uncategorized/` | 10 | 200, `noindex`, "Nothing Found" | no (soft 404s) |
 | Feeds (`/feed/`, `/comments/feed/`, per-post, per-archive) | 79 | 200 RSS | decision (see 6) |
@@ -62,7 +62,7 @@ Observed on the live site (`url-variants.csv`):
 - **Handling:** put these in `_redirects`; keep trailing slashes (`trailingSlash: 'always'`); canonical host = `https://www.`.
 
 ### 8. Sitemap vs reality (LOW)
-- Rank Math sitemap index → 5 sitemaps, 122 URLs (72 posts, 28 portfolio, 20 pages, 1 category, 1 portfolio_cat), **all 200, indexable, self-canonical**; `lastmod` present. `/sitemap.xml` and `/wp-sitemap.xml` 301 → `/sitemap_index.xml`. Sitemap files are sent with `X-Robots-Tag: noindex` (normal for Rank Math).
+- Rank Math sitemap index → 5 sitemaps, 122 URLs (72 posts, 27 portfolio items + the `/portfolio/` archive, 20 pages, 1 category, 1 portfolio_cat), **all 200, indexable, self-canonical**; `lastmod` present. `/sitemap.xml` and `/wp-sitemap.xml` 301 → `/sitemap_index.xml`. Sitemap files are sent with `X-Robots-Tag: noindex` (normal for Rank Math).
 - Indexable but not in sitemap: the 23 pagination URLs above, plus `/portfolio/` is in neither the sitemap nor flagged (200, indexable). `/404-2/` and `/category/uncategorized/` are noindex and excluded (consistent).
 - **Orphan:** `/斑禿治療/` is in the sitemap but **no page links to it** (the only such URL; crawl depth 0–4 for all others). Keep the URL; ask the owner whether it should be linked from the SMP 治療 menu.
 - `/smp-assessment/` is indexable but has **no canonical tag, no JSON-LD**, and is not in the main nav (reached from CTAs).
