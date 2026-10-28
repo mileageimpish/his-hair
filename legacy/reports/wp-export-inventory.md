@@ -34,11 +34,16 @@ Contains: `site-settings.json` (global colours and typography, theme-style butto
 **It does not contain plugin exports.** The `plugins` list in its manifest is only the names and versions of 12 active plugins — it has no Slider Revolution sliders, Redirection rules, Contact Form 7 forms, Rank Math settings or Mailchimp settings. (Those came from the separate Redirection export and from the WXR, which carries CF7 and Mailchimp forms.) The manifest list is also incomplete: Rank Math, Redirection and Slider Revolution are active on the live site but are not listed.
 Plugins named in the manifest: Elementor 3.8.0, All-in-One WP Migration 7.111, **CMP – Coming Soon & Maintenance 4.1.4**, Contact Form 7 5.6.4, **Easy Updates Manager 9.0.14** (explains why nothing is updated), GTranslate 2.9.14, **HIS SMP Hair Loss Assessment 1.1.0** (the custom quiz plugin), Joinchat 4.5.11, Kirki 4.0.24, MC4WP 4.8.11, Meta Box 5.6.7, One Click Import Demo Content 1.0 (theme demo importer).
 
-## Still missing
+## Home hero slider (Slider Revolution) — recovered from the live page, no export needed
 
-1. **Slider Revolution export** for the home hero (Slider Revolution → Slider Overview → Export).
-2. **Source of the custom plugin `wp-content/plugins/his-smp-assessment/`** (the `/smp-assessment/` quiz and the `his-smp/v1/track` endpoint). Zip that folder via the hosting file manager or All-in-One WP Migration (plugins only).
-3. **Rank Math** settings export (Status & Tools → Import & Export) and a screenshot of Titles & Meta → Local SEO (address / phone / hours used in JSON-LD).
-4. Screenshots: Settings → Permalinks, Settings → Joinchat, GTranslate settings; Tools → Site Health → Info text.
-5. The **404 log** from Tools → Redirection (optional) to see which old URLs are still requested.
-6. Not WordPress, still open: Search Console export, Google Business Profile details.
+The home hero **is in use**: module `rev_slider_3_1` (slider #3, slides 7–9; the other sliders in the admin list are theme-demo leftovers). Its three slides, images, texts and button link are saved in `legacy/home-hero-slides.json`: slide images `slider3-2025_1.jpg`, `slider3-2025_2.jpg`, `slider3-home3_3.jpg`; each slide has a heading, a sentence, and a "免費頭髮及頭皮評估" button to `/smp-assessment/`. Observed: autoplay about every 8–10 s, arrows + bullets + progress bar, 1240×613 px at a 1440 px viewport.
+
+## Plugins are not being ported (owner decision, 2026-10-29)
+
+Slider Revolution, Contact Form 7, Mailchimp for WP, Joinchat, GTranslate, Rank Math, Redirection, the custom `his-smp-assessment` plugin and the rest are **not** carried over; each feature gets a better implementation in the Astro/Sanity build. Only their *content and behaviour* matter (captured above and in the other reports). Where each feature's data should go is tracked in Linear (HIS-5).
+
+## Still useful (all optional)
+
+1. A screenshot or text of Rank Math → Titles & Meta → **Local SEO** (address, phone, hours, price range as the owner wants them published) — or just tell us the correct values for `siteSettings`.
+2. The **404 log** from Tools → Redirection, to see which old URLs are still requested.
+3. Not WordPress: Search Console export, Google Business Profile details.
