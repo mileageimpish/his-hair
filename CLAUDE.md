@@ -16,7 +16,13 @@ Rebuild of https://www.hishairclinic.hk/ (currently WordPress) as a fast, SEO- a
 - **Sanity** for content. Studio lives in `/studio`; schemas are the contract with the owner's ChatGPT editing.
 - **Cloudflare Pages** for hosting. A Sanity publish webhook triggers a rebuild.
 - TypeScript strict, pnpm.
-- Commands: _fill in after scaffolding_ (dev, build, lint, test, check-redirects).
+- Commands (Node 22, pnpm):
+  - `pnpm dev`: local dev server.
+  - `pnpm build`: static build into `dist/`. Production vs preview comes from `SITE_ENV` or `CF_PAGES_BRANCH` (see `.env.example`); unset means preview.
+  - `pnpm check`: typecheck (`astro check`).
+  - `pnpm verify-build <preview|production>`: checks `dist/` (robots.txt, noindex, `/_parity/`, `<html lang>`, no client JS). Run after a build in the same mode.
+  - `pnpm check-redirects`: legacy URL parity check (`scripts/crawl/verify-parity.mjs`, base from `PARITY_BASE`). Expected to fail until redirects land (HIS-18).
+  - No lint or unit-test command yet.
 
 ## Phases — read before every task
 

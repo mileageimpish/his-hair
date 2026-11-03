@@ -1,0 +1,13 @@
+---
+/** Placeholder home page until the home template lands (HIS-15). */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/strings';
+
+const locale = 'zh-hk';
+---
+
+<BaseLayout locale={locale} title={t(locale, 'placeholder.title')}>
+  <main>
+    <h1>{t(locale, 'placeholder.heading')}</h1>
+  </main>
+</BaseLayout>
