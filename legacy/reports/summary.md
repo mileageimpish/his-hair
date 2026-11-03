@@ -6,7 +6,7 @@ Crawled **2026-10-26** from https://www.hishairclinic.hk (WordPress). Read-only:
 
 | Item | Count |
 |---|---:|
-| Distinct URLs found (sitemap + REST + link crawl + probes) | **837** (122 in the sitemap) |
+| Distinct URLs found (sitemap + REST + link crawl + probes) | **863** (122 in the sitemap) |
 | HTML pages snapshotted (200, rendered + source + text + 2 screenshots each) | 165 |
 | Pages (WP `page`) | 21 (20 in sitemap + `/404-2/`) |
 | Posts (all at `/YYYY/MM/DD/slug/`) | 72 |
@@ -63,13 +63,13 @@ Rank Math emits one `@graph` on 92 pages (pages, portfolio, archives): `HealthAn
 `noindex`: 20 pages — 9 tag archives, `/category/uncategorized/`, `/404-2/`, the author archive + 7 `/page/N/`, and the 404 template (all sensible; the first four are 200 "Nothing Found" soft 404s). Canonical pointing elsewhere: only `/page/2/` → `/` (a duplicate of the home page). 21 pages carry no canonical tag: the 20 `noindex` pages plus **`/smp-assessment/`, which is indexable but has no canonical and no JSON-LD**. Sitemap (122 URLs) vs reality: every sitemap URL is 200/indexable/self-canonical; **23 indexable pagination URLs are not in the sitemap**; sitemap `lastmod` is present. `/sitemap.xml` and `/wp-sitemap.xml` 301 → `/sitemap_index.xml`. Both encodings of Chinese slugs return the same page. (`url-risks.md`)
 
 **Total URLs, and does it fit Cloudflare Pages' 2,100 redirect-rule limit?**
-**837 URLs** found (372 are "must-keep" parity targets: pages, posts, portfolio, archives, feeds, shortlinks). Even 1 rule per URL (837) fits under 2,100. Realistic v1 rule count is **≈ 25–130** static rules (see `url-risks.md`). Two caveats: (a) `/?p=<id>` shortlinks (131) can't be matched by `_redirects` (query strings) → Function/Redirect Rule; (b) the 2,291 upload URLs would **not** fit as per-file redirects → serve `/wp-content/uploads/**` as static files.
+**863 URLs** found (372 are "must-keep" parity targets: pages, posts, portfolio, archives, feeds, shortlinks). Even 1 rule per URL (863) fits under 2,100. Realistic v1 rule count is **≈ 25–130** static rules (see `url-risks.md`). Two caveats: (a) `/?p=<id>` shortlinks (131) can't be matched by `_redirects` (query strings) → Function/Redirect Rule; (b) the 2,291 upload URLs would **not** fit as per-file redirects → serve `/wp-content/uploads/**` as static files.
 
 ## Harness
 
 `scripts/crawl/verify-parity.mjs` tested against the live site: see the final line of this section.
 
-**Live-site run (2026-10-26):** 372 legacy URLs → 759 checks (as-found encoded, decoded UTF-8 and upper-case-hex forms) → **759 passed, 0 failed, exit 0**; 1 URL skipped because the legacy URL is itself a 2-hop chain (`/?p=6` → `?elementor_library=default-kit` → `/`, an Elementor-internal post). Negative test against a wrong base path: failures reported, CSV written, exit 1. Usage: `node scripts/crawl/verify-parity.mjs --base https://<preview>.pages.dev` (add `NODE_USE_ENV_PROXY=1` in a proxied sandbox; `--fast` is only honoured for non-live bases). Output: `legacy/reports/parity-failures.csv`.
+**Live-site run (re-run 2026-11-03 after the review fixes):** 382 legacy URLs → 769 checks (as-found encoded, decoded UTF-8 and upper-case-hex forms) → **769 passed, 0 failed, exit 0**. Against any other base, the retired URLs (tag archives, `uncategorized`, `/404-2/`, the author archive, and their feeds and pages) must answer 404/410 instead; 1 URL skipped because the legacy URL is itself a 2-hop chain (`/?p=6` → `?elementor_library=default-kit` → `/`, an Elementor-internal post). Negative test against a wrong base path: failures reported, CSV written, exit 1. Usage: `node scripts/crawl/verify-parity.mjs --base https://<preview>.pages.dev` (add `NODE_USE_ENV_PROXY=1` in a proxied sandbox; `--fast` is only honoured for non-live bases). Output: `legacy/reports/parity-failures.csv`.
 
 ## What to commit
 

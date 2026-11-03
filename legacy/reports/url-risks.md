@@ -1,6 +1,6 @@
 # URL risks for the migration (and v1-safe handling)
 
-Source: `legacy/urls.csv` (837 distinct URLs found), `url-variants.csv`, `probes.csv`, `seo.csv`. Crawled 2026-10-26 against https://www.hishairclinic.hk (site was still being edited that day: newest post dated 2026-10-26).
+Source: `legacy/urls.csv` (863 distinct URLs found), `url-variants.csv`, `probes.csv`, `seo.csv`. Crawled 2026-10-26 against https://www.hishairclinic.hk (site was still being edited that day: newest post dated 2026-10-26).
 v1 rule (CLAUDE.md): same URLs, no structure changes without a Linear decision. "Handling" below is the v1-safe default; anything that changes a URL needs a decision-log entry.
 
 ## At a glance
@@ -12,17 +12,17 @@ v1 rule (CLAUDE.md): same URLs, no structure changes without a Linear decision. 
 | Portfolio items (`/portfolio/slug/`, CPT `ot_portfolio`) | 27 | 200 | yes, exact |
 | Archives: `/portfolio/`, `/portfolio-category/見證專訪/`, `/category/news/`, `/author/admin2122his/` (+ `/page/N/` variants: 34) | 4 + 34 | 200 | decision (see 4, 5) |
 | Tag archives (`/tag/<x>/`, 9) and `/category/uncategorized/` | 10 | 200, `noindex`, "Nothing Found" | no (soft 404s) |
-| Feeds (`/feed/`, `/comments/feed/`, per-post, per-archive) | 79 | 200 RSS | decision (see 6) |
+| Feeds (`/feed/`, `/comments/feed/`, per-post, per-archive, per-tag) | 89 | 200 RSS | decision (see 6) |
 | Shortlinks `/?p=<id>` | 131 | 301 → pretty URL | see 3 |
 | Uploads referenced by pages | 2,291 URLs checked | all 200 | keep serving (see 9) |
 | REST / oEmbed endpoints | 92 + 232 | 200 | no |
 
-Cloudflare Pages `_redirects` limit is 2,100 rules (2,000 static + 100 dynamic). **The 837 URLs fit even if every one were a rule**; the realistic v1 list is ≈ 50–150 rules (see "Redirects needed"). The only thing that would blow the limit is mapping uploads one-by-one (2,291+ URLs) — serve them as files instead (risk 9).
+Cloudflare Pages `_redirects` limit is 2,100 rules (2,000 static + 100 dynamic). **The 863 URLs fit even if every one were a rule**; the realistic v1 list is ≈ 50–150 rules (see "Redirects needed"). The only thing that would blow the limit is mapping uploads one-by-one (2,291+ URLs) — serve them as files instead (risk 9).
 
 ## Risks, ranked
 
 ### 1. Percent-encoded Chinese slugs — must match byte for byte (HIGH)
-- 194 URLs contain percent-encoding. WordPress/Rank Math emit **lower-case hex** (`%e8%b3%87%e8%a8%8a`) in links, canonical tags, sitemap and `Link` headers (181 URLs lower; 13 were first found with upper-case hex in links). Canonical tag string == served URL string for every page (0 mismatches).
+- 194 URLs contain percent-encoding. WordPress/Rank Math emit **lower-case hex** (`%e8%b3%87%e8%a8%8a`) in links, canonical tags, sitemap and `Link` headers (all 194 recorded in lower-case form; a few internal links use upper-case hex, which WordPress also answers). Canonical tag string == served URL string for every page (0 mismatches).
 - The live site returns the **same page (same `<title>`) for all three forms**: lower-hex, UPPER-hex and raw UTF-8 (`/資訊/`): 120/122 checked URLs 200 directly; the 2 exceptions are `/…/page/1/` which 301 to the base. It never redirects between hex cases.
 - Longest path segment is 100 bytes (decoded), longest encoded path 211 chars — no filesystem/URL length problem (limit 255 bytes per segment).
 - **Handling:** emit/canonicalise **lower-case hex** everywhere (canonical, sitemap, hreflang, internal links, `_redirects`). Build output folders with the decoded Chinese names and confirm on the Cloudflare preview that lower-hex, UPPER-hex and raw-UTF-8 requests all return 200 (the harness `scripts/crawl/verify-parity.mjs` tests exactly this; it passes on the live site today). Cloudflare Pages `_redirects` rules with non-ASCII sources must be tested on the preview before relying on them.
@@ -49,7 +49,7 @@ Cloudflare Pages `_redirects` limit is 2,100 rules (2,000 static + 100 dynamic).
 - **Handling:** do not carry these into the build. Recommend 404 (or 410) for tags, `uncategorized`, `/404-2/`, and 301 `/author/admin2122his/` → `/` (or `/about-us/`); all need a decision-log entry because they are legacy 200s. Remove the author name from structured data.
 
 ### 6. Feeds (MEDIUM–LOW)
-- 79 feed URLs return 200 `application/rss+xml`: `/feed/`, `/comments/feed/`, one per post (`/YYYY/MM/DD/slug/feed/`, 72), and a few per archive. The site-wide `<link rel="alternate">` points at `/feed/` and `/comments/feed/`.
+- 89 feed URLs return 200 `application/rss+xml`: `/feed/`, `/comments/feed/`, one per post (`/YYYY/MM/DD/slug/feed/`, 72), a few per archive, and 10 for the leftover tag and `uncategorized` archives (those go with their archives: 404, see 5). The site-wide `<link rel="alternate">` points at `/feed/` and `/comments/feed/`.
 - **Handling:** v1: generate `/feed/` (full blog RSS, Astro RSS) at the same URL; `/comments/feed/` → 301 `/feed/` (comments are not used); per-post feeds → 301 to the post (72 static rules) or let them 404 — owner decision. `/?feed=rss2` is covered by the Function in risk 3.
 
 ### 7. Trailing-slash, case and host variants (MEDIUM)

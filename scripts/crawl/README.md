@@ -17,7 +17,7 @@ Run from the repo root. In a proxied sandbox prefix `NODE_USE_ENV_PROXY=1` (not 
 | 6 | `06-content-flags.mjs` | `reports/content-flags.md` (prices, superlatives, medical wording, testimonials, awards, NAP) | no |
 | 7 | `07-assets.mjs` | Downloads the CSS, fonts and theme images the pages load (from the saved network logs, plus `url()` references) → `legacy/assets/` | yes |
 | 8 | `08-design-tokens.mjs` | Computed colours, fonts, type scale, buttons, widths, breakpoints from the 19 template pages → `legacy/assets/design-tokens.json`, `reports/design-tokens.md` | yes |
-| – | `verify-parity.mjs [--base URL]` | For every legacy URL (encoded, decoded-UTF-8 and upper-hex forms) checks the target returns 200, or a single 301 to the expected target. Writes `reports/parity-failures.csv`; exits non-zero on failures. Default base: `$PARITY_BASE` or the live site. | yes |
+| – | `verify-parity.mjs [--base URL]` | For every legacy URL (encoded, decoded-UTF-8 and upper-hex forms) checks the target returns 200, or a single 301 to the expected target. Writes `reports/parity-failures.csv`; exits non-zero on failures. Default base: `$PARITY_BASE` or the live site. On any other base, URLs retired by owner decision (tags, `uncategorized`, `/404-2/`, author archive) must answer 404/410. | yes |
 
 Dependencies: Node ≥ 22 and Playwright (resolved from the global install; no `package.json` dependency added). Everything else uses Node built-ins.
 

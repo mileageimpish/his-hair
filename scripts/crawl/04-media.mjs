@@ -4,7 +4,7 @@
 //   NODE_USE_ENV_PROXY=1 node scripts/crawl/04-media.mjs [--download]
 import fs from 'node:fs';
 import path from 'node:path';
-import { LEGACY, ORIGIN, hop, writeCsv, mkdir, UA } from './lib.mjs';
+import { LEGACY, ORIGIN, hop, writeCsv, download, requestUrl } from './lib.mjs';
 
 const dec = (s) => { try { return decodeURIComponent(s); } catch { return s; } };
 const isUpload = (u) => /^https?:\/\/(www\.)?hishairclinic\.hk\/wp-content\/uploads\//i.test(u);
@@ -54,7 +54,7 @@ console.log(`library originals total (REST filesize): ${(libBytes / 1048576).toF
 
 for (const k of toCheck) {
   const it = items.get(k);
-  const r = await hop(k.replace(/[^\x20-\x7e]/g, encodeURIComponent), { method: 'HEAD' });
+  const r = await hop(requestUrl(k), { method: 'HEAD' });
   it.status = r.status;
   it.content_length = r.headers['content-length'] || '';
   it.content_type = (r.headers['content-type'] || '').split(';')[0];
@@ -80,10 +80,8 @@ if (process.argv.includes('--download')) {
   for (const r of rows.filter((x) => x.in_library === 'y' && x.status_head === 200)) {
     const dest = path.join(up, dec(new URL(r.url).pathname.replace(/^\/wp-content\/uploads\//, '')));
     if (fs.existsSync(dest)) continue;
-    mkdir(path.dirname(dest));
-    const res = await fetch(r.url.replace(/[^\x20-\x7e]/g, encodeURIComponent), { headers: { 'user-agent': UA } });
-    if (res.ok) fs.writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
-    await new Promise((x) => setTimeout(x, 500));
+    const status = await download(requestUrl(r.url), dest); // shared limiter, timeout and retry/backoff
+    if (status !== 200) { console.log('  download failed', status, r.url); continue; }
     if (++n % 50 === 0) console.log('  downloaded', n);
   }
   console.log('downloaded', n, 'files to legacy/uploads/ (git-ignored)');

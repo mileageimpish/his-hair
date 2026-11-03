@@ -83,11 +83,37 @@ export async function hop(url, { method = 'GET', cache = true, accept } = {}) {
     const headers = {};
     for (const [k, v] of res.headers) headers[k] = v;
     const out = { url, method, status: res.status, headers, fetchedAt: new Date().toISOString() };
-    if (cache) {
+    // A 429/503 that survived the retries is transient: never cache it, so the next run asks again.
+    if (cache && res.status !== 429 && res.status !== 503) {
       fs.writeFileSync(meta, JSON.stringify(out));
       if (body) fs.writeFileSync(path.join(CACHE, key + '.body'), body);
     }
     return { ...out, body };
+  }
+}
+
+/** URL string safe to request: the WHATWG URL parser percent-encodes non-ASCII (incl. astral chars) as UTF-8. */
+export const requestUrl = (u) => new URL(u).href;
+
+/** Polite binary GET to a file, through the same limiter, timeout and retry/backoff as hop(). Returns the HTTP status (0 = network error). */
+export async function download(url, dest) {
+  for (let attempt = 0; ; attempt++) {
+    await acquire();
+    let res, buf, err;
+    try {
+      res = await fetch(url, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(120000) });
+      if (res.ok) buf = Buffer.from(await res.arrayBuffer());
+      else await res.arrayBuffer();
+    } catch (e) {
+      err = e;
+    } finally {
+      release();
+    }
+    const retryable = err || res.status === 429 || res.status === 503;
+    if (retryable && attempt < 4) { await sleep(2000 * 2 ** attempt); continue; }
+    if (err) return 0;
+    if (buf) { mkdir(path.dirname(dest)); fs.writeFileSync(dest, buf); }
+    return res.status;
   }
 }
 

@@ -22,6 +22,9 @@ if (args.includes('--fast') && BASE !== ORIGIN) setPacing({ delayMs: 0, concurre
 
 // Types that are not "pages that must keep working" (checked elsewhere): API/embeds, assets, junk params, raw probes.
 const OUT_OF_SCOPE = new Set(['oembed', 'rest-api', 'upload-file', 'tracking-param', 'probe']);
+// Legacy URLs the owner decided to retire (HIS-5): theme-demo tags, uncategorized, /404-2/ and the author archive,
+// with their feeds and pages. On a new build they must answer 404/410; on the live site they still exist.
+const RETIRED = /^\/(tag\/|category\/uncategorized\/|404-2\/|author\/admin2122his\/)/;
 const dec = (s) => { try { return decodeURIComponent(s); } catch { return s; } };
 const pathOf = (u) => { const x = new URL(u, BASE + '/'); return x.pathname + x.search; };
 const norm = (p) => dec(p).replace(/%[0-9a-f]{2}/gi, (m) => m.toUpperCase());   // hex-case-insensitive comparison
@@ -42,7 +45,7 @@ async function follow(url) {
   let cur = url;
   for (let i = 0; i < 6; i++) {
     const r = await hop(cur, { cache: false });
-    chain.push({ url: cur, status: r.status, loc: r.headers.location || '', body: r.body });
+    chain.push({ url: cur, status: r.status, loc: r.headers.location || '', ct: r.headers['content-type'] || '', body: r.body });
     if (r.status >= 300 && r.status < 400 && r.headers.location) cur = new URL(r.headers.location, cur).href; else break;
   }
   return chain;
@@ -51,6 +54,14 @@ async function follow(url) {
 for (const r of rows) {
   if ((r.redirect_chain.match(/->/g) || []).length > 1) { skippedMultiHop.push(r.url_as_found); continue; } // legacy itself is a >1-hop chain (e.g. Elementor kit ?p=6): not a target to reproduce
   const legacyEncoded = rawPath(r.url_as_found);
+  if (BASE !== ORIGIN && RETIRED.test(dec(legacyEncoded))) {
+    checks++;
+    const chain = await follow(BASE + legacyEncoded);
+    const last = chain[chain.length - 1];
+    if ([404, 410].includes(last.status) && chain.length === 1) passed++;
+    else failures.push({ legacy_url: r.url_as_found, form: 'retired', tested_url: BASE + legacyEncoded, post_type: r.post_type, legacy_status: r.status, expected: '404 or 410 (retired)', got_chain: chain.map((c) => `${c.status} ${c.url}`).join(' -> '), problem: `retired URL answered ${last.status}` });
+    continue;
+  }
   const legacyRedirects = r.status === '301' || (r.redirect_chain && r.redirect_chain.includes('->'));
   const expectedPath = pathOf(legacyRedirects ? r.final_url : r.url_as_found);
   const forms = [['encoded-as-found', legacyEncoded]];
@@ -69,7 +80,7 @@ for (const r of rows) {
     else if (hops === 1 && ![301, 308].includes(first.status)) problem = `redirect is ${first.status}, must be a permanent 301/308`;
     else if (norm(pathOf(last.url)) !== norm(expectedPath)) problem = `ends at ${dec(pathOf(last.url))}, expected ${dec(expectedPath)}`;
     else if (!legacyRedirects && hops === 1 && form === 'encoded-as-found') problem = 'canonical legacy URL must answer 200 directly, got a redirect';
-    if (!problem && r.title && /html/i.test('text/html') && last.body && titleOf(last.body) !== r.title && !legacyRedirects) {
+    if (!problem && r.title && /html/i.test(last.ct) && last.body && titleOf(last.body) !== r.title && !legacyRedirects) {
       titleWarnings++;
       if (STRICT_TITLE) problem = `title differs: "${titleOf(last.body)}" vs legacy "${r.title}"`;
     }

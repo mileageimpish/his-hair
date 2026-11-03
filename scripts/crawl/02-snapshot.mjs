@@ -187,25 +187,28 @@ const renderedLinks = new Set();
 const pageMap = [];
 let done = 0;
 for (const pg of pages) {
-  if (ONLY && !pg.final.includes(ONLY)) continue;
-  if (done >= LIMIT) break;
   const f = {
     src: path.join(dirs.src, pg.slug + '.html'), ren: path.join(dirs.ren, pg.slug + '.html'),
     dsk: path.join(dirs.shot, pg.slug + '-desktop.png'), mob: path.join(dirs.shot, pg.slug + '-mobile.png'),
     text: path.join(dirs.text, pg.slug + '.md'), ext: path.join(dirs.ext, pg.slug + '.json'),
   };
   const complete = [f.src, f.ren, f.dsk, f.mob, f.text, f.ext].every((x) => fs.existsSync(x));
-  pageMap.push({ url: pg.url, final_url: pg.final, slug: pg.slug, source_html: path.relative(LEGACY, f.src), rendered_html: path.relative(LEGACY, f.ren), desktop_png: path.relative(LEGACY, f.dsk), mobile_png: path.relative(LEGACY, f.mob), text_md: path.relative(LEGACY, f.text), schema_json: '', post_type: pg.post_type });
-  if (complete && !FORCE) { try { for (const a of JSON.parse(fs.readFileSync(f.ext, 'utf8')).anchors) renderedLinks.add(a.href); } catch {} continue; }
+  // Listed in page-map.csv only once every file exists (a failed capture must not point at missing files).
+  const row = { url: pg.url, final_url: pg.final, slug: pg.slug, source_html: path.relative(LEGACY, f.src), rendered_html: path.relative(LEGACY, f.ren), desktop_png: path.relative(LEGACY, f.dsk), mobile_png: path.relative(LEGACY, f.mob), text_md: path.relative(LEGACY, f.text), schema_json: fs.existsSync(path.join(dirs.schema, pg.slug + '.json')) ? 'schema/' + pg.slug + '.json' : '', post_type: pg.post_type };
+  // --only / --limit select what to capture; pages left out keep their existing row so page-map.csv stays complete.
+  const selected = (!ONLY || pg.final.includes(ONLY)) && done < LIMIT;
+  if (!selected) { if (complete) pageMap.push(row); continue; }
+  if (complete && !FORCE) { pageMap.push(row); try { for (const a of JSON.parse(fs.readFileSync(f.ext, 'utf8')).anchors) renderedLinks.add(a.href); } catch {} continue; }
   done++;
   console.log(`[${done}] ${decodeURIComponent(pg.final)}`);
+  let ctx, mctx;
   try {
     // raw source as served (cached GET from discovery)
     const c = await chase(pg.final);
     fs.writeFileSync(f.src, c.last.body || '');
     const srcHeaders = c.last.headers;
     // Desktop pass
-    const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'zh-HK' });
+    ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'zh-HK' });
     const page = await ctx.newPage();
     const { resp, netlog } = await gotoSettled(page, pg.final);
     const cookiesAtLoad = await ctx.cookies();       // before any scrolling/interaction
@@ -222,19 +225,19 @@ for (const pg of pages) {
     if (ex.jsonld.length) {
       const parsed = ex.jsonld.map((s) => { try { return JSON.parse(s); } catch { return { _unparseable: s }; } });
       fs.writeFileSync(path.join(dirs.schema, pg.slug + '.json'), JSON.stringify(parsed.length === 1 ? parsed[0] : parsed, null, 2));
-      pageMap[pageMap.length - 1].schema_json = 'schema/' + pg.slug + '.json';
+      row.schema_json = 'schema/' + pg.slug + '.json';
     }
-    await ctx.close();
+    await ctx.close(); ctx = null;
     await sleep(700);
     // Mobile pass (fresh context so responsive JS/lazy assets behave like a phone)
-    const mctx = await browser.newContext({ viewport: { width: 390, height: 844 }, userAgent: UA, isMobile: true, hasTouch: true, deviceScaleFactor: 2, locale: 'zh-HK' });
+    mctx = await browser.newContext({ viewport: { width: 390, height: 844 }, userAgent: UA, isMobile: true, hasTouch: true, deviceScaleFactor: 2, locale: 'zh-HK' });
     const mpage = await mctx.newPage();
     await gotoSettled(mpage, pg.final);
     await autoScroll(mpage);
     const floatingMobile = (await mpage.evaluate(EXTRACT)).floating;
     const mobileOverflow = await mpage.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
     await shot(mpage, f.mob, 390);
-    await mctx.close();
+    await mctx.close(); mctx = null;
     fs.writeFileSync(f.ext, JSON.stringify({
       url: pg.url, final: pg.final, slug: pg.slug, post_type: pg.post_type, status: resp.status(), http_headers: srcHeaders, source_len: (c.last.body || '').length,
       cookies_at_load: cookiesAtLoad.map(({ name, domain, path: p, expires, httpOnly, secure, sameSite }) => ({ name, domain, path: p, expires, httpOnly, secure, sameSite })),
@@ -242,8 +245,12 @@ for (const pg of pages) {
       ...ex, floating: undefined,
     }));
     for (const a of ex.anchors) renderedLinks.add(a.href);
+    pageMap.push(row);
   } catch (e) {
     console.log('  FAILED', e.message.slice(0, 200));
+  } finally {
+    await ctx?.close().catch(() => {});
+    await mctx?.close().catch(() => {});
   }
   await sleep(1500);
 }

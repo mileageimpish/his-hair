@@ -19,6 +19,7 @@ const keyOf = (u) => { const x = new URL(u); return dec(x.pathname) + x.search; 
 
 /** @type {Map<string, any>} key -> record */
 const urls = new Map();
+const hasUpperHex = (s) => /%(?:[A-F][0-9A-Fa-f]|[0-9a-f][A-F])/.test(s);
 function add(u, source, extra = {}) {
   if (!isInternal(u)) return null;
   u = u.replace(/#.*$/, '');
@@ -27,6 +28,8 @@ function add(u, source, extra = {}) {
   if (!r) {
     r = { url_as_found: u, sources: new Set(), depth: '', post_type: '', wp_id: '', in_sitemap: 'n', lastmod: '' };
     urls.set(k, r);
+  } else if (hasUpperHex(r.url_as_found) && !hasUpperHex(u)) {
+    r.url_as_found = u; // keep the lower-case-hex form WordPress emits, whatever order links are found in
   }
   r.sources.add(source);
   for (const [a, b] of Object.entries(extra)) if (b !== undefined && b !== '' && (r[a] === '' || r[a] === undefined)) r[a] = b;
@@ -51,7 +54,10 @@ async function readSitemap(u, depth = 0) {
     const lastmod = (m[2].match(/<lastmod>([^<]*)<\/lastmod>/) || [])[1] || '';
     if (!loc) continue;
     if (m[1] === 'sitemap') { if (depth < 3) await readSitemap(loc, depth + 1); }
-    else add(loc, 'sitemap', { lastmod }).in_sitemap = 'y', urls.get(keyOf(loc.replace(/#.*$/, ''))).sitemap_file = name;
+    else {
+      const rec = add(loc, 'sitemap', { lastmod }); // null for an off-site <loc>: recorded in the log only
+      if (rec) { rec.in_sitemap = 'y'; rec.sitemap_file = name; } else log('  off-site sitemap entry skipped:', loc);
+    }
   }
 }
 for (const s of ['/sitemap_index.xml', '/sitemap.xml', '/wp-sitemap.xml']) await readSitemap(ORIGIN + s);
@@ -114,28 +120,26 @@ fs.writeFileSync(path.join(OUT.wpjson, '_summary.json'), JSON.stringify(rest, nu
 // ---------- C. link crawl (source HTML) ----------
 log('C. link crawl');
 const ASSET_RE = /\.(jpe?g|png|gif|webp|svg|avif|ico|pdf|mp4|mov|webm|mp3|zip|docx?|xlsx?|pptx?|css|js|woff2?|ttf|eot)(\?.*)?$/i;
-const queue = [[ORIGIN + '/', 0]];
-const crawled = new Set();
 const extraSeeds = [];
 const rl = path.join(LEGACY, 'cache', 'rendered-links.json'); // written by step 2 (links only visible after JS)
-if (fs.existsSync(rl)) for (const u of JSON.parse(fs.readFileSync(rl, 'utf8'))) extraSeeds.push(u);
-for (const [k, r] of urls) if (r.sources.has('sitemap') || r.sources.has('rest')) queue.push([r.url_as_found, 1]);
-// NB: depth is measured from the homepage via links only; sitemap/REST seeds get their depth only if a link reaches them.
-const depthOf = new Map([[keyOf(ORIGIN + '/'), 0]]);
-const linkQ = [[ORIGIN + '/', 0]];
-const seenLinkK = new Set();
-const pageInfo = new Map(); // key -> {html}
-let qi = 0;
-const work = [[ORIGIN + '/', 0, true]];
-for (const u of extraSeeds) { add(u, 'crawl-rendered'); }
-const toVisit = new Map(); // key -> [url, depth]
-toVisit.set(keyOf(ORIGIN + '/'), [ORIGIN + '/', 0]);
+if (fs.existsSync(rl)) for (const u of JSON.parse(fs.readFileSync(rl, 'utf8'))) if (add(u, 'crawl-rendered')) extraSeeds.push(u);
+// Sitemap/REST URLs are crawled too, so links that only orphan pages carry are found.
+for (const r of urls.values()) if (r.sources.has('sitemap') || r.sources.has('rest')) extraSeeds.push(r.url_as_found);
+// Breadth-first from the homepage: depth = link distance from home. When that frontier is exhausted, the extra
+// seeds are crawled with unknown depth (null), so depth stays blank for pages no link reaches.
+const queue = [[ORIGIN + '/', 0]];
+const queued = new Set([keyOf(ORIGIN + '/')]);
+const enqueue = (u, d) => { const k = keyOf(u); if (!queued.has(k)) { queued.add(k); queue.push([u, d]); } };
 add(ORIGIN + '/', 'crawl').depth = 0;
-const visited = new Set();
-while (true) {
-  const next = [...toVisit.entries()].find(([k]) => !visited.has(k));
-  if (!next) break;
-  const [k, [u, d]] = next; visited.add(k);
+let seedsQueued = false;
+for (let i = 0; ; i++) {
+  if (i === queue.length) {
+    if (seedsQueued) break;
+    seedsQueued = true;
+    for (const u of extraSeeds) enqueue(u, null);
+    if (i === queue.length) break;
+  }
+  const [u, d] = queue[i];
   if (ASSET_RE.test(rawPath(u)) || /\/wp-(content|includes|json|admin)\//i.test(u) || /\/feed\/?$/i.test(rawPath(u))) continue;
   if (new URL(u).search) continue; // query-string URLs recorded, not followed
   const r = await chase(u);
@@ -149,12 +153,10 @@ while (true) {
     if (!isInternal(abs)) continue;
     abs = abs.replace(/#.*$/, '');
     const rec = add(abs, 'crawl');
-    const ak = keyOf(abs);
-    if (rec.depth === '' ) rec.depth = d + 1;
-    if (!toVisit.has(ak)) toVisit.set(ak, [abs, d + 1]);
+    if (rec.depth === '' && d !== null) rec.depth = d + 1;
+    enqueue(abs, d === null ? null : d + 1);
   }
 }
-for (const u of extraSeeds) { const k = keyOf(u); if (!toVisit.has(k)) toVisit.set(k, [u, 99]); }
 log('  urls after crawl:', urls.size);
 
 // ---------- D. probes ----------

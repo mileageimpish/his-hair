@@ -2,7 +2,7 @@
 // (+ legacy/forms.csv, legacy/contact-points.csv, legacy/third-party.csv). Offline except cached/HEAD re-reads of a few URLs.
 import fs from 'node:fs';
 import path from 'node:path';
-import { LEGACY, ORIGIN, hop, readCsv, writeCsv } from './lib.mjs';
+import { LEGACY, ORIGIN, hop, readCsv, writeCsv, requestUrl } from './lib.mjs';
 
 const dec = (s) => { try { return decodeURIComponent(s); } catch { return s; } };
 const EXT = path.join(LEGACY, 'cache', 'extract');
@@ -182,7 +182,7 @@ const sampleUrls = ['/', '/robots.txt', '/sitemap_index.xml', '/wp-json/', '/wp-
 const hs = [];
 for (const u of sampleUrls) { const r = await hop(ORIGIN + u, { method: 'HEAD' }); hs.push([u, r.status, r.headers['content-type'] || '', r.headers['cache-control'] || '(none)', r.headers['server'] || '', r.headers['content-encoding'] || '', r.headers['expires'] || '']); }
 const up = (await import('node:fs')).default.existsSync(path.join(LEGACY, 'media.csv')) ? readCsv(path.join(LEGACY, 'media.csv')).find((r) => r.status_head === '200' && r.kind === 'image') : null;
-if (up) { const r = await hop(up.url.replace(/[^\x20-\x7e]/g, encodeURIComponent), { method: 'HEAD' }); hs.push([new URL(up.url).pathname, r.status, r.headers['content-type'] || '', r.headers['cache-control'] || '(none)', r.headers['server'] || '', r.headers['content-encoding'] || '', r.headers['expires'] || '']); }
+if (up) { const r = await hop(requestUrl(up.url), { method: 'HEAD' }); hs.push([new URL(up.url).pathname, r.status, r.headers['content-type'] || '', r.headers['cache-control'] || '(none)', r.headers['server'] || '', r.headers['content-encoding'] || '', r.headers['expires'] || '']); }
 h('Sample responses by resource type:', '', tableMd(['Path', 'Status', 'Content-Type', 'Cache-Control', 'Server', 'Encoding', 'Expires'], hs));
 h('Notes: server is plain Apache/2; **no HSTS, CSP, X-Frame-Options, Referrer-Policy or Permissions-Policy**; no CDN. `Vary: User-Agent` is sent, so responses may differ by user agent (the crawl used `HIS-Rebuild-Audit/1.0`; Googlebot/browser UAs could get different markup — worth one comparison). `/wp-json/` and sitemaps are sent with `X-Robots-Tag: noindex`.');
 
