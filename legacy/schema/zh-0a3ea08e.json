@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/dc1.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/dc1.jpg",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e7%94%b7%e5%a3%ab%e5%b0%88%e7%94%a8%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#webpage",
+      "url": "https://www.hishairclinic.hk/%e7%94%b7%e5%a3%ab%e5%b0%88%e7%94%a8%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/",
+      "name": "男士專用脫髮療程 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-06T19:25:10+08:00",
+      "dateModified": "2026-10-21T15:38:51+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/dc1.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "男士專用脫髮療程 - HIS 香港紋髮 SMP 中心",
+      "keywords": "脫髮療程",
+      "datePublished": "2022-11-06T19:25:10+08:00",
+      "dateModified": "2026-10-21T15:38:51+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "頭皮微色素繡髮是一種高度先進的現代化男士專用脫髮療程，能複製剃髮後頭皮上真正毛囊的外觀。效果迫真度高，令你和身邊的人都相信你仍有擁有濃密活髮。繡髮技術是獲潮流教主和時尚名人稱為「男士儀容必備」的大熱潮流。SMP® 男士專用脫髮療程為患有一般脫髮問題、多種形式的脫髮症或頭皮疤痕（包括因植髮手術所致的疤痕）的男士提供解決方案。現時市面上的各種方案，少有像SMP® 技術一樣即時見效、持久、像真度高、無後顧之憂、非入侵性和具有成本效益。",
+      "name": "男士專用脫髮療程 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e7%94%b7%e5%a3%ab%e5%b0%88%e7%94%a8%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e7%94%b7%e5%a3%ab%e5%b0%88%e7%94%a8%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/dc1.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e7%94%b7%e5%a3%ab%e5%b0%88%e7%94%a8%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#webpage"
+      }
+    }
+  ]
+}

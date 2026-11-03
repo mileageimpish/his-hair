@@ -8,7 +8,7 @@ Rebuild of https://www.hishairclinic.hk/ (currently WordPress) as a fast, SEO- a
 - **Rules for working in this repo:** this file.
 - **Content model and SEO conventions:** `/docs`.
 - **SEO standard:** Linear document 'SEO strategy'. Link to it, don't copy it.
-- **Legacy reference:** `/legacy` holds text exports and references from the old WordPress site (WXR export, theme files, URL list, SEO data, screenshots). It is read-only reference material; never edit it. The media library and any database dump are NOT in git (they are large, and a dump may contain personal data). They are stored at: TO BE FILLED IN.
+- **Legacy reference:** `/legacy` holds text exports and references from the old WordPress site (WXR export, theme files, URL list, SEO data, screenshots). It is read-only reference material; never edit it. Exception: the audit write-ups (`legacy/reports/*.md`, `legacy/CRAWL-README.md`) may be corrected when a fact in them is wrong; crawled and exported data is only ever regenerated with `scripts/crawl/`, never hand-edited. The media library and any database dump are NOT in git (they are large, and a dump may contain personal data). The media library (566 originals), HTML snapshots and screenshots from the 2026-10-26 crawl are on the orphan branch `legacy-assets` (Git LFS; see `legacy/CRAWL-README.md` for restore steps). The WordPress export received 2026-10-28 (WXR, Elementor Kit, Redirection rules, Additional CSS, Theratio theme; it contains an author email, so not on working branches) is on `legacy-assets` under `wp-export/` (inventory: `legacy/reports/wp-export-inventory.md`). No database dump has been received.
 
 ## Stack
 

@@ -1,0 +1,82 @@
+[
+ {
+  "id": 1,
+  "count": 0,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/category/uncategorized/",
+  "name": "未分類",
+  "slug": "uncategorized",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/categories/1"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?categories=1"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 5,
+  "count": 72,
+  "description": "",
+  "link": "https://www.hishairclinic.hk/category/news/",
+  "name": "資訊",
+  "slug": "news",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/categories/5"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://www.hishairclinic.hk/wp-json/wp/v2/posts?categories=5"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]

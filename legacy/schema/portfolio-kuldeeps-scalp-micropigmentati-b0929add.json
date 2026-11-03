@@ -1,0 +1,108 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20230122_Kuldeep.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20230122_Kuldeep.jpg",
+      "width": "1278",
+      "height": "660",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/portfolio/kuldeeps-scalp-micropigmentation-smp-hk-transformation/#webpage",
+      "url": "https://www.hishairclinic.hk/portfolio/kuldeeps-scalp-micropigmentation-smp-hk-transformation/",
+      "name": "Kuldeep&#039;s Scalp Micropigmentation (SMP) HK Transformation - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2023-01-22T03:05:55+08:00",
+      "dateModified": "2025-11-13T01:51:27+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20230122_Kuldeep.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Kuldeep&#039;s Scalp Micropigmentation (SMP) HK Transformation - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2023-01-22T03:05:55+08:00",
+      "dateModified": "2025-11-13T01:51:27+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "https://www.youtube.com/watch?v=U9jHxuEJ1lU&#038;t=3s",
+      "name": "Kuldeep&#039;s Scalp Micropigmentation (SMP) HK Transformation - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/portfolio/kuldeeps-scalp-micropigmentation-smp-hk-transformation/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/portfolio/kuldeeps-scalp-micropigmentation-smp-hk-transformation/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20230122_Kuldeep.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/portfolio/kuldeeps-scalp-micropigmentation-smp-hk-transformation/#webpage"
+      }
+    }
+  ]
+}

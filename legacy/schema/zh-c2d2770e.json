@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20160211_151357-COLLAGE-COLLAGE-1000x720.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20160211_151357-COLLAGE-COLLAGE-1000x720.jpg",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e5%af%86%e5%ba%a6%e6%b2%bb%e7%99%82/#webpage",
+      "url": "https://www.hishairclinic.hk/%e5%af%86%e5%ba%a6%e6%b2%bb%e7%99%82/",
+      "name": "密度治療 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-09T00:52:50+08:00",
+      "dateModified": "2026-10-22T21:17:56+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20160211_151357-COLLAGE-COLLAGE-1000x720.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "密度治療 - HIS 香港紋髮 SMP 中心",
+      "keywords": "密度治療",
+      "datePublished": "2022-11-09T00:52:50+08:00",
+      "dateModified": "2026-10-22T21:17:56+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "我們所有療程均於安全、消毒的環境中進行，所採用的三合一超微細針管只作一次使用，並根據本公司的獨特規格製造。我們的色素均經特別調配，提供超過100種深淺度，以創造與你本身真髮色調相配的完美色效的密度治療。",
+      "name": "密度治療 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e5%af%86%e5%ba%a6%e6%b2%bb%e7%99%82/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e5%af%86%e5%ba%a6%e6%b2%bb%e7%99%82/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/20160211_151357-COLLAGE-COLLAGE-1000x720.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e5%af%86%e5%ba%a6%e6%b2%bb%e7%99%82/#webpage"
+      }
+    }
+  ]
+}

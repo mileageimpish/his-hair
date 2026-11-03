@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20240508_DannyA.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20240508_DannyA.jpg",
+      "width": "1278",
+      "height": "660",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/portfolio/dannys-scalp-micropigmentation-smp-hk-%e9%a0%ad%e7%9a%ae%e7%b4%8b%e9%ab%ae%e5%88%86%e4%ba%ab/#webpage",
+      "url": "https://www.hishairclinic.hk/portfolio/dannys-scalp-micropigmentation-smp-hk-%e9%a0%ad%e7%9a%ae%e7%b4%8b%e9%ab%ae%e5%88%86%e4%ba%ab/",
+      "name": "Danny&#039;s Scalp Micropigmentation (SMP) HK 頭皮紋髮分享 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2024-05-08T02:33:30+08:00",
+      "dateModified": "2025-11-20T03:37:27+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20240508_DannyA.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Danny&#039;s Scalp Micropigmentation (SMP) HK 頭皮紋髮分享 - HIS 香港紋髮 SMP 中心",
+      "keywords": "髮線退縮",
+      "datePublished": "2024-05-08T02:33:30+08:00",
+      "dateModified": "2025-11-20T03:37:27+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "Danny一直以來都以自己的年輕活力感到自豪，但隨著頭髮線退縮，他的自信也隨之消逝。絕望之際，他嘗試了所有的療法，但都無濟於事。然後，他發現了Jonathan Tang的頭皮著色紋髮技術。在Jonathan純熟的手勢下，Danny的外表煥然一新。他看起來年輕了好幾歲，自信心也飛速提升。不再被困於自卑之中，Danny重新面對世界。妻子燦爛的笑容肯定了他的選擇。不再需要戴帽子遮掩或感到自卑，每次照鏡子，Danny看到的不僅僅是頭皮的變革，更是因為Jonathan的技藝而得到的心靈重生。",
+      "name": "Danny&#039;s Scalp Micropigmentation (SMP) HK 頭皮紋髮分享 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/portfolio/dannys-scalp-micropigmentation-smp-hk-%e9%a0%ad%e7%9a%ae%e7%b4%8b%e9%ab%ae%e5%88%86%e4%ba%ab/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/portfolio/dannys-scalp-micropigmentation-smp-hk-%e9%a0%ad%e7%9a%ae%e7%b4%8b%e9%ab%ae%e5%88%86%e4%ba%ab/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/11/20240508_DannyA.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/portfolio/dannys-scalp-micropigmentation-smp-hk-%e9%a0%ad%e7%9a%ae%e7%b4%8b%e9%ab%ae%e5%88%86%e4%ba%ab/#webpage"
+      }
+    }
+  ]
+}

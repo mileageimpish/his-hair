@@ -1,0 +1,77 @@
+{
+ "source": "https://www.hishairclinic.hk/ (rendered home page, 2026-10-29)",
+ "plugin": "Slider Revolution 6.6.5",
+ "module_id": "rev_slider_3_1 (slider #3, slides 7, 8, 9)",
+ "observed": {
+  "module_size_at_1440": "1240x613",
+  "autoplay": "yes; slide change observed at about 7.6 s and 17.2 s after load (roughly 8-10 s per slide)",
+  "controls": "arrows, bullets, progress bar",
+  "loop": "not tested"
+ },
+ "slides": [
+  {
+   "order": 1,
+   "key": "rs-7",
+   "background_image": "https://www.hishairclinic.hk/wp-content/uploads/2025/09/slider3-2025_1.jpg",
+   "layers": [
+    {
+     "layer_id": "slider-3-slide-7-layer-0",
+     "text": "HIS 香港紋髮 SMP 中心"
+    },
+    {
+     "layer_id": "slider-3-slide-7-layer-1",
+     "text": "由英國受訓、2009年起全職從業的 Jonathan Tang 主理，提供自然髮線、頭髮增密及植髮疤痕遮蓋。"
+    },
+    {
+     "layer_id": "slider-3-slide-7-layer-2",
+     "text": "SCALP MICRO-PIGMENTATION"
+    },
+    {
+     "layer_id": "slider-3-slide-7-layer-6",
+     "text": "免費頭髮及頭皮評估",
+     "href": "https://www.hishairclinic.hk/smp-assessment/"
+    }
+   ]
+  },
+  {
+   "order": 2,
+   "key": "rs-8",
+   "background_image": "https://www.hishairclinic.hk/wp-content/uploads/2025/09/slider3-2025_2.jpg",
+   "layers": [
+    {
+     "layer_id": "slider-3-slide-8-layer-0",
+     "text": "什麼是男士紋髮（SMP）？"
+    },
+    {
+     "layer_id": "slider-3-slide-8-layer-1",
+     "text": "紋髮（SMP）透過精細色點模擬剃短髮根，呈現自然、低調的外觀。"
+    },
+    {
+     "layer_id": "slider-3-slide-8-layer-6",
+     "text": "免費頭髮及頭皮評估",
+     "href": "https://www.hishairclinic.hk/smp-assessment/"
+    }
+   ]
+  },
+  {
+   "order": 3,
+   "key": "rs-9",
+   "background_image": "https://www.hishairclinic.hk/wp-content/uploads/2022/11/slider3-home3_3.jpg",
+   "layers": [
+    {
+     "layer_id": "slider-3-slide-9-layer-0",
+     "text": "什麼是紋髮（SMP）？"
+    },
+    {
+     "layer_id": "slider-3-slide-9-layer-1",
+     "text": "紋髮（SMP）是一項非手術頭皮微色素技術，以精細色點模擬自然髮根外觀。"
+    },
+    {
+     "layer_id": "slider-3-slide-9-layer-6",
+     "text": "免費頭髮及頭皮評估",
+     "href": "https://www.hishairclinic.hk/smp-assessment/"
+    }
+   ]
+  }
+ ]
+}

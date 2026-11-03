@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/10/2025_p003a.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2025/10/2025_p003a.jpg",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e6%a4%8d%e9%ab%ae%e8%88%87%e7%96%a4%e7%97%95/#webpage",
+      "url": "https://www.hishairclinic.hk/%e6%a4%8d%e9%ab%ae%e8%88%87%e7%96%a4%e7%97%95/",
+      "name": "植髮與疤痕 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-07T07:16:12+08:00",
+      "dateModified": "2026-10-20T20:14:13+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/10/2025_p003a.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "植髮與疤痕 - HIS 香港紋髮 SMP 中心",
+      "keywords": "植髮,疤痕",
+      "datePublished": "2022-11-07T07:16:12+08:00",
+      "dateModified": "2026-10-20T20:14:13+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "疤痕可以遮蓋到甚麼程度，需要按個別情況評估。疤痕嘅顏色、闊度、表面質感、留色情況，以及周邊頭髮密度同日常髮長，都會影響視覺效果，因此唔適合用固定百分比作保證。",
+      "name": "植髮與疤痕 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e6%a4%8d%e9%ab%ae%e8%88%87%e7%96%a4%e7%97%95/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e6%a4%8d%e9%ab%ae%e8%88%87%e7%96%a4%e7%97%95/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2025/10/2025_p003a.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e6%a4%8d%e9%ab%ae%e8%88%87%e7%96%a4%e7%97%95/#webpage"
+      }
+    }
+  ]
+}

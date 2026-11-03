@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/alop2-1024x717.jpg",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/alop2-1024x717.jpg",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#webpage",
+      "url": "https://www.hishairclinic.hk/%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/",
+      "name": "脫髮療程 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-07T19:46:18+08:00",
+      "dateModified": "2026-10-21T16:43:16+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/alop2-1024x717.jpg"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "脫髮療程 - HIS 香港紋髮 SMP 中心",
+      "keywords": "脫髮,脫髮療程,SMP",
+      "datePublished": "2022-11-07T19:46:18+08:00",
+      "dateModified": "2026-10-21T16:43:16+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "脫髮有唔同成因，可能逐漸出現，亦可能突然發生；有些屬暫時性，有些則會持續。除咗外觀改變，脫髮亦可能影響心情同自信。如果你未清楚脫髮原因，建議先向醫生或皮膚科醫生了解情況，再考慮合適嘅處理方法。",
+      "name": "脫髮療程 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/alop2-1024x717.jpg"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e8%84%ab%e9%ab%ae%e7%99%82%e7%a8%8b/#webpage"
+      }
+    }
+  ]
+}

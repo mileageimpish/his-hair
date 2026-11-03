@@ -1,0 +1,109 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "HealthAndBeautyBusiness",
+        "Organization"
+      ],
+      "@id": "https://www.hishairclinic.hk/#organization",
+      "name": "HIS (香港著色紋髮中心)",
+      "url": "https://www.hishairclinic.hk",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://www.hishairclinic.hk/#logo",
+        "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "contentUrl": "https://www.hishairclinic.hk/wp-content/uploads/2026/09/Logo-ChatGPT1.png",
+        "caption": "HIS (香港著色紋髮中心)",
+        "inLanguage": "zh-TW",
+        "width": "1359",
+        "height": "1157"
+      },
+      "openingHours": [
+        "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+      ],
+      "image": {
+        "@id": "https://www.hishairclinic.hk/#logo"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hishairclinic.hk/#website",
+      "url": "https://www.hishairclinic.hk",
+      "name": "HIS (香港著色紋髮中心)",
+      "alternateName": "HIS",
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Screenshot-2026-10-21-171334.png",
+      "url": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Screenshot-2026-10-21-171334.png",
+      "width": "200",
+      "height": "200",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hishairclinic.hk/%e6%af%94%e8%bc%83smp%e8%88%87%e5%85%b6%e4%bb%96%e7%99%82%e7%a8%8b/#webpage",
+      "url": "https://www.hishairclinic.hk/%e6%af%94%e8%bc%83smp%e8%88%87%e5%85%b6%e4%bb%96%e7%99%82%e7%a8%8b/",
+      "name": "紋髮（SMP）與其他脫髮處理方法比較 - HIS 香港紋髮 SMP 中心",
+      "datePublished": "2022-11-07T20:09:46+08:00",
+      "dateModified": "2026-10-21T21:45:58+08:00",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Screenshot-2026-10-21-171334.png"
+      },
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hishairclinic.hk/author/admin2122his/",
+      "name": "Admin2122HIS",
+      "url": "https://www.hishairclinic.hk/author/admin2122his/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "url": "https://secure.gravatar.com/avatar/8c44ac661ea8d2c9e9903dab79c14b7e?s=96&amp;d=mm&amp;r=g",
+        "caption": "Admin2122HIS",
+        "inLanguage": "zh-TW"
+      },
+      "sameAs": [
+        "http://www.hishairclinic.hk"
+      ],
+      "worksFor": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "紋髮（SMP）與其他脫髮處理方法比較 - HIS 香港紋髮 SMP 中心",
+      "keywords": "療程,假髮,植髮",
+      "datePublished": "2022-11-07T20:09:46+08:00",
+      "dateModified": "2026-10-21T21:45:58+08:00",
+      "author": {
+        "@id": "https://www.hishairclinic.hk/author/admin2122his/"
+      },
+      "publisher": {
+        "@id": "https://www.hishairclinic.hk/#organization"
+      },
+      "description": "植髮手術係將現有毛囊由供髮區移植到頭髮稀疏或禿髮位置，讓移植後存活嘅毛囊長出頭髮。是否適合，需要由醫生評估脫髮類型、供髮區狀況、頭皮健康及個人期望，並非所有脫髮情況都適用。",
+      "name": "紋髮（SMP）與其他脫髮處理方法比較 - HIS 香港紋髮 SMP 中心",
+      "@id": "https://www.hishairclinic.hk/%e6%af%94%e8%bc%83smp%e8%88%87%e5%85%b6%e4%bb%96%e7%99%82%e7%a8%8b/#richSnippet",
+      "isPartOf": {
+        "@id": "https://www.hishairclinic.hk/%e6%af%94%e8%bc%83smp%e8%88%87%e5%85%b6%e4%bb%96%e7%99%82%e7%a8%8b/#webpage"
+      },
+      "image": {
+        "@id": "https://www.hishairclinic.hk/wp-content/uploads/2026/10/Screenshot-2026-10-21-171334.png"
+      },
+      "inLanguage": "zh-TW",
+      "mainEntityOfPage": {
+        "@id": "https://www.hishairclinic.hk/%e6%af%94%e8%bc%83smp%e8%88%87%e5%85%b6%e4%bb%96%e7%99%82%e7%a8%8b/#webpage"
+      }
+    }
+  ]
+}
