@@ -48,6 +48,10 @@ if (headers !== null) {
   }
 }
 
+// 404.html must exist: without it Cloudflare Pages answers every unknown URL
+// with the home page and status 200.
+check(read('404.html') !== null, '404.html is missing (Pages would serve unknown URLs as 200)');
+
 // /_parity/ is preview-only
 const parity = fs.existsSync(path.join(dist, '_parity', 'index.html'));
 if (mode === 'preview') check(parity, '/_parity/ must be built on previews');
