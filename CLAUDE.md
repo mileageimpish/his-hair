@@ -20,8 +20,8 @@ Rebuild of https://www.hishairclinic.hk/ (currently WordPress) as a fast, SEO- a
   - `pnpm dev`: local dev server.
   - `pnpm build`: static build into `dist/`. Production vs preview comes from `SITE_ENV` or `CF_PAGES_BRANCH` (see `.env.example`); unset means preview.
   - `pnpm check`: typecheck (`astro check`).
-  - `pnpm verify-build <preview|production>`: checks `dist/` (robots.txt, noindex, `/_parity/`, `<html lang>`, no client JS). Run after a build in the same mode.
-  - `pnpm check-redirects`: legacy URL parity check (`scripts/crawl/verify-parity.mjs`, base from `PARITY_BASE`). Expected to fail until redirects land (HIS-18).
+  - `pnpm verify-build <preview|production>`: checks `dist/` (robots.txt, noindex, `/_parity/`, `404.html`, `<html lang>`, no client JS). Run after a build in the same mode.
+  - `pnpm check-redirects --base <preview URL>` (or set `PARITY_BASE`): legacy URL parity check (`scripts/crawl/verify-parity.mjs`). Without a base it checks the live WordPress site, where it passes; against a preview it fails until redirects land (HIS-18).
   - No lint or unit-test command yet.
 
 ## Phases — read before every task
