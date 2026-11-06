@@ -1,0 +1,29 @@
+---
+/**
+ * Minimal document shell. HIS-13 replaces the body with the real header,
+ * footer and design tokens; HIS-10 adds canonical, hreflang and JSON-LD.
+ */
+import { locales, type Locale } from '../i18n/locales';
+import { isProduction } from '../lib/deploy-env';
+
+interface Props {
+  locale: Locale;
+  title: string;
+}
+
+const { locale, title } = Astro.props;
+const noindex = !isProduction();
+---
+
+<!doctype html>
+<html lang={locales[locale].htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,21 @@
+---
+/**
+ * Placeholder 404 page. Its main job for now: without a 404.html, Cloudflare
+ * Pages serves the home page with status 200 for every unknown URL (SPA
+ * fallback), which would hide missing pages from the URL-parity check.
+ * Wording copied from the legacy 404 page (zh-HK part only); HIS-17 builds
+ * the real template.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../i18n/strings';
+
+const locale = 'zh-hk';
+---
+
+<BaseLayout locale={locale} title={t(locale, 'notFound.title')}>
+  <main>
+    <h1>{t(locale, 'notFound.heading')}</h1>
+    <p>{t(locale, 'notFound.body')}</p>
+    <p><a href="/">{t(locale, 'notFound.homeLink')}</a></p>
+  </main>
+</BaseLayout>

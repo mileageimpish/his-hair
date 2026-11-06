@@ -1,0 +1,71 @@
+---
+/**
+ * /_parity/ — preview-only page (never built in production; see
+ * astro.config.ts). Lists every legacy template from legacy/templates.csv with
+ * a link to the live legacy page and to the same path on this preview.
+ * HIS-22 adds the legacy screenshots next to each row and the automated checks.
+ * It is an internal English page, so it uses the en locale for <html lang>.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { parseCsv } from '../lib/csv';
+
+const csv = fs.readFileSync(path.join(process.cwd(), 'legacy/templates.csv'), 'utf8');
+const templates = parseCsv(csv).map((row) => {
+  const url = new URL(row.url ?? '');
+  return {
+    template: row.template ?? '',
+    description: row.description ?? '',
+    legacyUrl: url.href,
+    previewPath: url.pathname + url.search,
+    displayPath: decodeURIComponent(url.pathname) + url.search,
+    desktopPng: row.desktop_png ?? '',
+    mobilePng: row.mobile_png ?? '',
+  };
+});
+---
+
+<BaseLayout locale="en" title="Parity check (preview only)">
+  <main>
+    <h1>Parity check (preview only)</h1>
+    <p>
+      {templates.length} legacy templates from <code>legacy/templates.csv</code>. Screenshots are on
+      the <code>legacy-assets</code> branch and will appear here with HIS-22.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Template</th>
+          <th scope="col">Description</th>
+          <th scope="col">Legacy page</th>
+          <th scope="col">This preview</th>
+          <th scope="col">Screenshots</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          templates.map((t) => (
+            <tr>
+              <td>{t.template}</td>
+              <td>{t.description}</td>
+              <td>
+                <a href={t.legacyUrl} rel="noopener">
+                  {t.displayPath}
+                </a>
+              </td>
+              <td>
+                <a href={t.previewPath}>{t.displayPath}</a>
+              </td>
+              <td>
+                {t.desktopPng}
+                <br />
+                {t.mobilePng}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </main>
+</BaseLayout>

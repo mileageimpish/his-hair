@@ -1,0 +1,10 @@
+# Cloudflare Pages response headers.
+# Every pages.dev hostname (the production pages.dev URL, branch aliases and
+# per-deployment URLs) is noindexed, so only the real domain is ever indexed.
+# Cloudflare also adds this header to preview deployments by default; these
+# rules make it explicit and cover the production pages.dev URL too.
+https://:project.pages.dev/*
+	X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+	X-Robots-Tag: noindex
